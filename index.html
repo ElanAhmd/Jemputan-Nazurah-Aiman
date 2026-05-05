@@ -6,8 +6,6 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- ✨ Wedding Script Font -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,12 +15,14 @@
 
 <!-- ✉️ ENVELOPE -->
 <div id="envelope" onclick="openInvite()">
+
   <div class="flap"></div>
 
   <div class="letter">
     <h2>You're Invited</h2>
     <p>Tap to Open Invitation</p>
   </div>
+
 </div>
 
 <!-- 🎉 MAIN CONTENT -->
@@ -32,7 +32,7 @@
 
   <h1>Nazurah & Aiman</h1>
 
-  <p class="intro" font>
+  <p class="intro">
     Dengan penuh kesyukuran, kami menjemput Tuan/Puan ke majlis perkahwinan kami
   </p>
 
@@ -48,21 +48,19 @@
 
   <div class="block">
     <h2>Lokasi</h2>
-    <p>AZ Banquet Hall, Kota Baharu</p>
+    <p>AZ Banquet Hall, Kota Bharu</p>
   </div>
 
-  <a href="https://maps.app.goo.gl/KpsgxZfapUbApKai9" target="_blank">
+  <a href="https://maps.app.goo.gl/vFb5qfxP3cHFFvzo7" target="_blank">
     📍 Lihat Lokasi
   </a>
 
-  <footer>
-    Merupakan satu penghormatan jika anda dapat hadir 🤍
-  </footer>
+  <footer>Merupakan satu penghormatan jika anda dapat hadir 🤍</footer>
 
 </div>
 
 <!-- 🎵 MUSIC -->
-<audio id="bg-music" autoplay loop>
+<audio id="bg-music" loop>
   <source src="Songs/music.mp3" type="audio/mpeg">
 </audio>
 
@@ -77,6 +75,7 @@ function openInvite() {
 
   setTimeout(() => {
     envelope.style.display = "none";
+
     main.style.display = "block";
 
     setTimeout(() => {
@@ -86,7 +85,9 @@ function openInvite() {
   }, 1200);
 
   if (music) {
-    music.play().catch(() => {});
+    music.play().catch(() => {
+      console.log("Autoplay blocked until click");
+    });
   }
 }
 
