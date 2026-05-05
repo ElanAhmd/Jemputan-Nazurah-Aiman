@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Palisade";
-  src: url("/Pics/palisade.regular.otf") format("opentype");
+  src: url("Pics/palisade.regular.otf") format("opentype");
 }
 
 /* 🌿 BASE */
@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-family: Georgia, serif;
 
-  background: url("/Pics/35322185_1.jpg") no-repeat center center fixed;
+  background: url("Pics/35322185_1.jpg") no-repeat center center fixed;
   background-size: cover;
 
   overflow-x: hidden;
