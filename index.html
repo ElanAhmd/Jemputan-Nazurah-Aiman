@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wedding Invitation</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- ✨ Wedding Script Font -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🌸 PETALS -->
+<div class="petals"></div>
+
+<!-- ✉️ ENVELOPE -->
+<div id="envelope" onclick="openInvite()">
+  <div class="flap"></div>
+
+  <div class="letter">
+    <h2>You're Invited</h2>
+    <p>Tap to Open Invitation</p>
+  </div>
+</div>
+
+<!-- 🎉 MAIN CONTENT -->
+<div id="main-content">
+
+  <p class="sub">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</p>
+
+  <h1>Nazurah & Aiman</h1>
+
+  <p class="intro" font>
+    Dengan penuh kesyukuran, kami menjemput Tuan/Puan ke majlis perkahwinan kami
+  </p>
+
+  <div class="block">
+    <h2>Butiran Majlis</h2>
+    <p>Sabtu • 11.30 AM – 4.00 PM</p>
+
+    <p class="time-line">
+      <span class="icon">🕰️</span>
+      Ketibaan pengantin: 12.30 PM
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>Lokasi</h2>
+    <p>AZ Banquet Hall, Kota Baharu</p>
+  </div>
+
+  <a href="https://maps.app.goo.gl/KpsgxZfapUbApKai9" target="_blank">
+    📍 Lihat Lokasi
+  </a>
+
+  <footer>
+    Merupakan satu penghormatan jika anda dapat hadir 🤍
+  </footer>
+
+</div>
+
+<!-- 🎵 MUSIC -->
+<audio id="bg-music" autoplay loop>
+  <source src="/Songs/music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openInvite() {
+  const envelope = document.getElementById("envelope");
+  const main = document.getElementById("main-content");
+  const music = document.getElementById("bg-music");
+
+  envelope.style.opacity = "0";
+  envelope.style.transform = "translate(-50%, -50%) scale(0.95)";
+
+  setTimeout(() => {
+    envelope.style.display = "none";
+    main.style.display = "block";
+
+    setTimeout(() => {
+      main.classList.add("show");
+    }, 50);
+
+  }, 1200);
+
+  if (music) {
+    music.play().catch(() => {});
+  }
+}
+
+/* 🌸 PETALS */
+const petals = document.querySelector(".petals");
+
+for (let i = 0; i < 35; i++) {
+  let p = document.createElement("span");
+
+  p.style.left = Math.random() * 100 + "vw";
+  p.style.animationDuration = (4 + Math.random() * 6) + "s";
+  p.style.animationDelay = Math.random() * 5 + "s";
+
+  petals.appendChild(p);
+}
+</script>
+
+</body>
+</html>

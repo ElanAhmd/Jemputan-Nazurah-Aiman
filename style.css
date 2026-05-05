@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "MyWeddingFont";
+  src: url("Pics/chopin-script.regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palisade";
+  src: url("/Pics/palisade.regular.otf") format("opentype");
+}
+
+/* 🌿 BASE */
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+
+  background: url("/Pics/35322185_1.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  overflow-x: hidden;
+
+  color: rgba(60, 45, 40, 0.85);
+  line-height: 1.6;
+}
+
+/* 🌫 overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 245, 248, 0.28);
+  z-index: -1;
+}
+
+/* 🌸 PETALS */
+.petals {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petals span {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+
+  background: radial-gradient(circle at 30% 30%, #91e7ab, #91dd7a);
+  border-radius: 50% 70% 50% 70%;
+
+  opacity: 0.85;
+
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* ✉️ ENVELOPE */
+#envelope {
+  position: fixed;
+  width: 340px;
+  height: 230px;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+  z-index: 10;
+
+  background: #fdfaf6;
+  border-radius: 14px;
+
+  border: 2px solid #d6cfc2;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+
+  overflow: hidden;
+
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 55%;
+  top: 0;
+
+  background: #e6ded0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+  z-index: 1;
+}
+
+.letter {
+  position: absolute;
+  width: 88%;
+  height: 88%;
+
+  left: 6%;
+  top: 6%;
+
+  background: white;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  z-index: 3;
+
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* ✨ MAIN CONTENT */
+#main-content {
+  display: none;
+  opacity: 0;
+
+  text-align: center;
+  padding: 45px 25px;
+
+  position: relative;
+  z-index: 5;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  width: 85%;
+  max-width: 700px;
+  margin: 40px auto;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(139, 111, 71, 0.25);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.15),
+    inset 0 0 15px rgba(255,255,255,0.4);
+
+  backdrop-filter: blur(6px);
+
+  transform: translateY(20px);
+
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#main-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 💍 TYPOGRAPHY */
+h1 {
+  font-family: "MyWeddingFont", serif;
+  font-size: clamp(38px, 4.5vw, 62px);
+
+  color: rgba(70, 50, 40, 0.85);
+  font-weight: normal;
+
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: #8b6f47;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.intro {
+  font-family: "Palisade", serif;
+
+  font-size: 40px;
+  max-width: 550px;
+  margin: 0 auto 20px auto;
+}
+/* 📦 BLOCKS */
+.block {
+  margin: 20px 0;
+}
+/* 🕰️ TIME LINE */
+.time-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 15px;
+}
+
+.icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* 📍 BUTTON */
+a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  background: #8b6f47;
+  color: white;
+  text-decoration: none;
+
+  border-radius: 6px;
+}
+
+/* 👋 FOOTER */
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #555;
+}
